@@ -8,14 +8,19 @@ Additional information:
 - 
 """
 
-given_array = [2,6,3,9,11]
+#given_array = [2,6,3,9,11,7,0]
+#given_array = [2,6,3]
+given_array = [4,4,5,5]
 
 def pairValidation(given_array, target): 
+    function_array = given_array.copy()
     array_result = []
-    for i in range(len(given_array) - 1):
-        if (given_array[i] + given_array[i+1]) == target and given_array[i] != given_array[i+1]: 
-            array_result.append([given_array[i], given_array[i+1]])
-    return array_result
-
+    base_number = 0
+    for i in range(len(function_array)):
+        base_number = function_array.pop(0)
+        for j in range(len(function_array)):
+            if base_number + function_array[j] == target and ([base_number, function_array[j]] not in array_result): 
+                array_result.append([base_number, function_array[j]])
+    return(array_result)
 
 print(pairValidation(given_array, 9))
