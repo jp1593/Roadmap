@@ -19,7 +19,7 @@ eng_spanish3 = dict(eng_spanish_list)
 print(eng_spanish3)
 
 """ Dictionary update / addition of an element """
-add_dict = {'name': 'Jhonson', 'age': 30}
+add_dict = {'name': 'Jhonson', 'age': 30, "education": "master"}
 # Change of value related to a key
 add_dict["age"] = 22
 # Addition of a value and its key
@@ -42,3 +42,14 @@ def linearSearch(dictionary, value):
 
 print(linearSearch(add_dict, 22))
 
+""" Deleting element of dictionary """
+
+# del Method
+del add_dict["education"]
+print(add_dict)
+
+# pop Method
+removed_element = add_dict.pop("age")
+# .popitem() = removes the last element of the dictionary; works as the same way in which pop() works in arrays
+# .clear() = eliminates all the key value pairs of the dictionary 
+print(add_dict)
