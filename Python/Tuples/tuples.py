@@ -24,3 +24,18 @@ for i in newTuple:
 # Acessing by index
 for i in range(len(newTuple)): 
     print(newTuple[i])
+
+# Searching for specific values in tuple
+print('b' in newTuple)
+
+# Searching for index of specific value
+print(newTuple.index('a'))
+
+# Manual search
+def searchTuple(inp_tuple, target): 
+    for i in range(len(inp_tuple)): 
+        if inp_tuple[i] == target: 
+            return f"Value:{target}, Index: {i}"
+    return "Element not in tuple"
+
+print(searchTuple(newTuple, 'a'))
