@@ -20,3 +20,7 @@ print(newTuple[1:3])
 # Linear search
 for i in newTuple: 
     print(i)
+
+# Acessing by index
+for i in range(len(newTuple)): 
+    print(newTuple[i])
