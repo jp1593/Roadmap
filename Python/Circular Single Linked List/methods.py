@@ -155,7 +155,7 @@ class CSLinkedList:
 
 
 
-# Method to print the node values of the hole list
+# Method to print the node values of the whole list
     def __str__(self):
         temp_node = self.head 
         result = ''

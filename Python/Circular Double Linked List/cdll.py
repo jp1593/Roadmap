@@ -181,7 +181,7 @@ class CircularDoubleLinkedList:
         self.tail = None 
         self.length = 0
 
-# Method to print the node values of the hole list
+# Method to print the node values of the whole list
     def __str__(self):
         if self.length == 0: 
             return ""
