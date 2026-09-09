@@ -114,6 +114,21 @@ class CircularDoubleLinkedList:
             self.length += 1
         return True
 
+    def pop_first(self): 
+        if self.length == 0: 
+            return None
+        removed_node = self.head 
+        if self.length == 1: 
+            self.head = None
+            self.tail = None
+        else: 
+            self.head = removed_node.next
+            self.head.previous = self.tail 
+            self.tail.next = self.head  
+        removed_node.next = None 
+        removed_node.previous = None
+        self.length -= 1
+        return removed_node
 
     def __str__(self):
         if self.length == 0: 
@@ -141,4 +156,6 @@ print(cdll.get(4).value)
 cdll.set(3, 99)
 print(cdll)
 cdll.insert(5, 555)
+print(cdll)
+cdll.pop_first()
 print(cdll)
