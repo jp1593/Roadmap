@@ -10,6 +10,7 @@ class CircularDoubleLinkedList:
         self.tail =  None 
         self.length = 0
 
+# Method to add a node at the end of the list
     def append(self, value): 
         new_node = Node(value)
         if not self.head: 
@@ -25,6 +26,7 @@ class CircularDoubleLinkedList:
             self.tail = new_node 
         self.length += 1
 
+# Method to add a node at the beggining of the list
     def prepend(self, value): 
         new_node = Node(value)
         if not self.head: 
@@ -40,6 +42,7 @@ class CircularDoubleLinkedList:
             self.head = new_node
         self.length += 1
 
+# Method to loop the list and get each node
     def traverse(self): 
         if not self.head: 
             return
@@ -50,6 +53,7 @@ class CircularDoubleLinkedList:
             if current_node == self.head: 
                 break
 
+# Method to loop the list and get each node (from the end to the beggining)
     def reverse_traversal(self): 
         if not self.head: 
             return 
@@ -59,6 +63,7 @@ class CircularDoubleLinkedList:
             current_node = current_node.previous 
             if current_node == self.tail: break
 
+# Method to check if the target value is in a node inside the list
     def search(self, value): 
         if not self.head: 
             return None 
@@ -71,6 +76,7 @@ class CircularDoubleLinkedList:
                 break 
         return False
 
+# Method to get a node by the index 
     def get(self, index): 
         if index < 0  or index >= self.length: 
             return None
@@ -87,6 +93,7 @@ class CircularDoubleLinkedList:
                     current_node = current_node.previous
         return current_node
 
+# Method to change the value of a node in a specific index 
     def set(self, index, value): 
         target_node = self.get(index)
         if target_node: 
@@ -94,6 +101,7 @@ class CircularDoubleLinkedList:
             return True
         return False
 
+# Method to insert a node at somepoint in the list
     def insert(self, index, value): 
         if index < 0  or index > self.length: 
             return False
@@ -114,6 +122,7 @@ class CircularDoubleLinkedList:
             self.length += 1
         return True
 
+# Method that erases the first node of the list
     def pop_first(self): 
         if self.length == 0: 
             return None
@@ -130,6 +139,7 @@ class CircularDoubleLinkedList:
         self.length -= 1
         return removed_node
 
+# Method that erase the last node of the list, returing the removed node
     def pop(self): 
         if self.length == 0: 
             return None
@@ -146,6 +156,7 @@ class CircularDoubleLinkedList:
         self.length -= 1
         return removed_node    
 
+# Method to remove a node from the list based on the index 
     def remove(self, index): 
         if index < 0 or index >= self.length: 
             return None 
@@ -161,6 +172,7 @@ class CircularDoubleLinkedList:
         self.length -= 1
         return removed_node
 
+# Method to delete all the nodes of the linked list
     def delete_all(self): 
         if not self.head: 
             return  
@@ -169,6 +181,7 @@ class CircularDoubleLinkedList:
         self.tail = None 
         self.length = 0
 
+# Method to print the node values of the hole list
     def __str__(self):
         if self.length == 0: 
             return ""
