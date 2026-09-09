@@ -87,6 +87,12 @@ class CircularDoubleLinkedList:
                     current_node = current_node.previous
         return current_node
 
+    def set(self, index, value): 
+        target_node = self.get(index)
+        if target_node: 
+            target_node.value = value
+            return True
+        return False
 
     def __str__(self):
         if self.length == 0: 
@@ -111,3 +117,5 @@ print(cdll)
 # cdll.reverse_traversal()
 print(cdll.search(40))
 print(cdll.get(4).value)
+cdll.set(3, 99)
+print(cdll)
