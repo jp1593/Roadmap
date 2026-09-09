@@ -161,6 +161,14 @@ class CircularDoubleLinkedList:
         self.length -= 1
         return removed_node
 
+    def delete_all(self): 
+        if not self.head: 
+            return  
+
+        self.head = None 
+        self.tail = None 
+        self.length = 0
+
     def __str__(self):
         if self.length == 0: 
             return ""
