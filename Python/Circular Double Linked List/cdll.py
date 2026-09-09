@@ -71,6 +71,22 @@ class CircularDoubleLinkedList:
                 break 
         return False
 
+    def get(self, index): 
+        if index < 0  or index >= self.length: 
+            return None
+        if not self.head: 
+            return None 
+        else: 
+            if index < self.length // 2: 
+                current_node = self.head 
+                for _ in range(index): 
+                    current_node = current_node.next 
+            else: 
+                current_node = self.tail
+                for _ in range(self.length-1, index, -1): 
+                    current_node = current_node.previous
+        return current_node
+
 
     def __str__(self):
         if self.length == 0: 
@@ -88,8 +104,10 @@ cdll.append(10)
 cdll.append(20)
 cdll.prepend(51)
 cdll.append(30)
+cdll.append(116)
 print(cdll)
 # cdll.traverse()
 # print(cdll)
 # cdll.reverse_traversal()
 print(cdll.search(40))
+print(cdll.get(4).value)
