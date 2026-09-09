@@ -94,6 +94,27 @@ class CircularDoubleLinkedList:
             return True
         return False
 
+    def insert(self, index, value): 
+        if index < 0  or index > self.length: 
+            return False
+        if index == 0: 
+            self.prepend(value)
+            return True
+        if index == self.length: 
+            self.append(value)
+            return True
+        else: 
+            new_node = Node(value)
+            previous_node = self.get(index-1)
+            if previous_node: 
+                new_node.previous = previous_node
+                new_node.next = previous_node.next 
+                previous_node.next.previous = new_node 
+                previous_node.next = new_node
+            self.length += 1
+        return True
+
+
     def __str__(self):
         if self.length == 0: 
             return ""
@@ -118,4 +139,6 @@ print(cdll)
 print(cdll.search(40))
 print(cdll.get(4).value)
 cdll.set(3, 99)
+print(cdll)
+cdll.insert(5, 555)
 print(cdll)
