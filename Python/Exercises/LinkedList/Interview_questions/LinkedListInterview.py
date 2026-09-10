@@ -22,7 +22,7 @@ class LinkedList:
 
     def __str__(self):
         values = [str(x.value) for x in self]
-        return ' <-> '.join(values)
+        return ' -> '.join(values)
 
     def __len__(self):
         result = 0 
@@ -38,7 +38,6 @@ class LinkedList:
             self.head = new_node 
             self.tail = new_node
         else: 
-            new_node.previous = self.tail
             self.tail.next = new_node 
             self.tail = new_node  
         return self.tail 
@@ -49,8 +48,3 @@ class LinkedList:
         for i in range(n): 
             self.add(randint(min_value, max_value))
         return self
-
-customLL = LinkedList()
-customLL.generate(10, 0, 99)
-print(customLL)
-print(len(customLL))
