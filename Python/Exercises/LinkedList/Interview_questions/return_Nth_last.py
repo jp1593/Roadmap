@@ -21,7 +21,7 @@ def reverse(ll):
     return ll
 
 def return_NthLast(ll, nth): 
-    if ll.head is None or nth < 0 or nth >= len(ll): 
+    if ll.head is None or nth < 0 or nth > len(ll): 
         return None
     reverse(ll)
     target_node = ll.head
@@ -33,5 +33,5 @@ def return_NthLast(ll, nth):
 linked_list = LinkedList()
 linked_list.generate(10, 1, 5)
 print(linked_list)
-print(return_NthLast(linked_list,1))
+print(return_NthLast(linked_list,10))
 print(linked_list)
