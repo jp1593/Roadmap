@@ -32,6 +32,10 @@ class Stack:
     def isEmpty(self): 
         return self.length == 0
 
+    def clear(self): 
+        self.top = None
+        self.length = 0
+
     def __str__(self):
         values = []
         temp = self.top
@@ -49,3 +53,5 @@ my_stack.pop()
 print(f"{my_stack}\n\nTop Value: {my_stack.top.value}")
 print(f"\nPeek value: {my_stack.peek().value}")
 print(f"\nIs empty? {my_stack.isEmpty()}")
+my_stack.clear()
+print(my_stack)
