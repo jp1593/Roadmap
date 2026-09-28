@@ -17,7 +17,16 @@ class Stack:
             self.top = new_node 
         self.length += 1
 
+    def __str__(self):
+        values = []
+        temp = self.top
+        while temp:
+            values.append(str(temp.value))
+            temp = temp.next
+        return "\n".join(values)
+
 my_stack = Stack()
 my_stack.push(10)
 my_stack.push(20)
 my_stack.push(30)
+print(my_stack)
