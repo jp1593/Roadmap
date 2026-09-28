@@ -17,6 +17,15 @@ class Stack:
             self.top = new_node 
         self.length += 1
 
+    def pop(self): 
+        if self.top is None: 
+            return None
+        removed_node  = self.top 
+        self.top = removed_node.next 
+        removed_node.next = None
+        self.length -= 1
+        return removed_node
+
     def __str__(self):
         values = []
         temp = self.top
@@ -29,4 +38,6 @@ my_stack = Stack()
 my_stack.push(10)
 my_stack.push(20)
 my_stack.push(30)
-print(my_stack)
+print(my_stack, '\n')
+my_stack.pop()
+print(f"{my_stack}\n\nTop Value: {my_stack.top.value}")
