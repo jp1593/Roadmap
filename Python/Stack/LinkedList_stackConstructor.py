@@ -26,6 +26,9 @@ class Stack:
         self.length -= 1
         return removed_node
 
+    def peek(self): 
+        return self.top 
+
     def __str__(self):
         values = []
         temp = self.top
@@ -41,3 +44,4 @@ my_stack.push(30)
 print(my_stack, '\n')
 my_stack.pop()
 print(f"{my_stack}\n\nTop Value: {my_stack.top.value}")
+print(f"\nPeek value: {my_stack.peek().value}")
