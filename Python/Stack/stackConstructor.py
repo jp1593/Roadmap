@@ -14,10 +14,17 @@ class Stack:
     def push(self, element): 
         self.items.append(element)
 
+    def pop(self): 
+        if self.isEmpty(): 
+            return "Stack is empty"
+        return self.items.pop()
+
 my_stack = Stack()
 my_stack.push(100)
 my_stack.push(90)
 my_stack.push(80)
 my_stack.push(70)
+print(my_stack, '\n')
+print(my_stack.isEmpty(), '\n')
+my_stack.pop()
 print(my_stack)
-print(my_stack.isEmpty())
