@@ -27,6 +27,9 @@ class Stack:
     def size(self): 
         return len(self.items)
 
+    def clear(self): 
+        self.items = []
+
 my_stack = Stack()
 my_stack.push(100)
 my_stack.push(90)
@@ -38,3 +41,5 @@ my_stack.pop()
 print(my_stack, '\n')
 print(my_stack.peek(), '\n')
 print(my_stack.size())
+my_stack.clear()
+print(my_stack)
