@@ -18,6 +18,12 @@ class Queue:
         else: 
             return self.items.pop(0)
 
+    def peek(self): 
+        if self.isEmpty(): 
+            return "There is not any element in the Queue" 
+        else: 
+            return self.items[0]
+
 my_queue = Queue()
 print(my_queue.isEmpty())
 my_queue.enqueue(10)
@@ -26,3 +32,4 @@ my_queue.enqueue(30)
 print(my_queue)
 print(my_queue.dequeue())
 print(my_queue)
+print(my_queue.peek())
