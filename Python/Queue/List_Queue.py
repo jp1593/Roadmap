@@ -1,3 +1,5 @@
+# List Queue - Without Capacity
+
 class Queue: 
     def __init__(self):
         self.items = []
@@ -24,6 +26,9 @@ class Queue:
         else: 
             return self.items[0]
 
+    def deleteQueue(self): 
+        self.items = []
+
 my_queue = Queue()
 print(my_queue.isEmpty())
 my_queue.enqueue(10)
@@ -33,3 +38,5 @@ print(my_queue)
 print(my_queue.dequeue())
 print(my_queue)
 print(my_queue.peek())
+my_queue.deleteQueue()
+print(my_queue)
