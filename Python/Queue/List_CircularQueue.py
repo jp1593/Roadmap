@@ -35,6 +35,22 @@ class Queue:
             self.items[self.top] = value
             return "Element inserted at the end of the Queue"
 
+    def deque(self): 
+        if self.isEmpty(): 
+            return "The Queue doesn't have any element on it"
+        else: 
+            firstElement = self.items[self.start]
+            start = self.start 
+            if self.start == self.top: 
+                self.start = -1 
+                self.top =-1 
+            elif self.start + 1 == self.maxSize: 
+                self.start = 0
+            else: 
+                self.start += 1
+            self.items[start] = None 
+            return firstElement
+
 my_queue = Queue(5)
 print(my_queue)
 print(my_queue.isFull())
@@ -42,4 +58,11 @@ print(my_queue.isEmpty())
 my_queue.enqueue(12)
 my_queue.enqueue(24)
 my_queue.enqueue(32)
+print(my_queue)
+my_queue.deque()
+my_queue.deque()
+print(my_queue)
+my_queue.enqueue(100)
+my_queue.enqueue(200)
+my_queue.enqueue(300)
 print(my_queue)
