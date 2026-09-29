@@ -39,16 +39,20 @@ class Queue:
             self.linkedList.tail.next = new_node
             self.linkedList.tail = new_node
 
+    def isEmpty(self): 
+        return self.linkedList.head == None 
+
     def dequeue(self): 
-        if self.linkedList.head is None:
+        if self.isEmpty():
             return "The Queue doesn't have any element"
         else: 
             removed_node = self.linkedList.head 
-            self.linkedList.head = self.linkedList.head.next
-            removed_node.next = None 
             if self.linkedList.head == self.linkedList.tail: 
                 self.linkedList.head = None
                 self.linkedList.tail = None
+            else: 
+                self.linkedList.head = self.linkedList.head.next
+                removed_node.next = None 
         return removed_node
 
 my_queue = Queue()
