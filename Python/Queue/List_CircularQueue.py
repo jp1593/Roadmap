@@ -7,5 +7,10 @@ class Queue:
         self.start = -1 
         self.top = -1 
 
+    def __str__(self):
+        values = [str(x) for x in self.items]
+        return ' '.join(values)
+
 
 my_queue = Queue(5)
+print(my_queue)
