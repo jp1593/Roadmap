@@ -55,6 +55,11 @@ class Queue:
                 removed_node.next = None 
         return removed_node
 
+    def peek(self):
+        if self.isEmpty():
+            return "The Queue doesn't have any element"
+        return self.linkedList.head
+
 my_queue = Queue()
 my_queue.enqueue(10)
 my_queue.enqueue(20)
@@ -63,3 +68,4 @@ my_queue.enqueue(40)
 print(my_queue)
 my_queue.dequeue()
 print(my_queue)
+print(my_queue.peek())
