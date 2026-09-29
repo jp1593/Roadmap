@@ -22,6 +22,19 @@ class Queue:
     def isEmpty(self): 
         return self.top == -1
 
+    def enqueue(self, value): 
+        if self.isFull(): 
+            return "The Queue has reached it's max capacity"
+        else: 
+            if self.top + 1 == self.maxSize: 
+                self.top = 0 
+            else: 
+                self.top += 1
+                if self.start == -1: 
+                    self.start = 0
+            self.items[self.top] = value
+            return "Element inserted at the end of the Queue"
+
 my_queue = Queue(5)
 print(my_queue)
 print(my_queue.isFull())
