@@ -19,7 +19,10 @@ class Queue:
         else: 
             return False
 
+    def isEmpty(self): 
+        return self.top == -1
 
 my_queue = Queue(5)
 print(my_queue)
 print(my_queue.isFull())
+print(my_queue.isEmpty())
