@@ -43,13 +43,19 @@ class Queue:
             start = self.start 
             if self.start == self.top: 
                 self.start = -1 
-                self.top =-1 
+                self.top = -1 
             elif self.start + 1 == self.maxSize: 
                 self.start = 0
             else: 
                 self.start += 1
             self.items[start] = None 
             return firstElement
+
+    def peek(self): 
+        if self.isEmpty(): 
+            return "The Queue doesn't have any element on it" 
+        else: 
+            return self.items[self.start]
 
 my_queue = Queue(5)
 print(my_queue)
@@ -66,3 +72,4 @@ my_queue.enqueue(100)
 my_queue.enqueue(200)
 my_queue.enqueue(300)
 print(my_queue)
+print(my_queue.peek())
