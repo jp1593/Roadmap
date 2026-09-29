@@ -60,6 +60,10 @@ class Queue:
             return "The Queue doesn't have any element"
         return self.linkedList.head
 
+    def deleteQueue(self): 
+        self.linkedList.head = None 
+        self.linkedList.tail = None
+
 my_queue = Queue()
 my_queue.enqueue(10)
 my_queue.enqueue(20)
@@ -69,3 +73,5 @@ print(my_queue)
 my_queue.dequeue()
 print(my_queue)
 print(my_queue.peek())
+my_queue.deleteQueue()
+print(my_queue)
