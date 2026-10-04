@@ -44,6 +44,10 @@ class Stack:
     def clear(self): 
         self.items = []
 
+    def removeBottom(self):
+        if not self.isEmpty():
+            return self.items.pop(0)
+
 class SetOfStacks: 
     def __init__(self, stackSize):
         self.stackSize = stackSize
@@ -65,6 +69,20 @@ class SetOfStacks:
             if self.stacks[-1].isEmpty(): 
                 self.stacks.pop()
             return eliminated_value
+
+    def popAtIndex(self, index):
+        if index < 0 or index >= len(self.stacks): 
+            return "There isn't a pile on that index"
+        else: 
+            removed_value = self.stacks[index].pop()
+            for i in range(index, len(self.stacks)-1): 
+                moved_item = self.stacks[i + 1].removeBottom()
+                self.stacks[i].push(moved_item)
+            if self.stacks[-1].isEmpty():
+                self.stacks.pop()
+            return removed_value
+
+
 
 def display_set_of_stacks(set_of_stacks):
     """Prints the internal state of all sub-stacks."""
@@ -93,3 +111,13 @@ print("Popped:", plate_set.pop())  # Expected: 70 (This should empty and delete 
 print("Popped:", plate_set.pop())  # Expected: 60 (Popping from Sub-Stack 1)
 
 display_set_of_stacks(plate_set)
+
+# 4. Test popAtIndex (Rollover)
+print("\n--- Popping at Index 0 (Sub-Stack 0) ---")
+# Currently Sub-Stack 0 is [10, 20, 30] and Sub-Stack 1 is [40, 50]
+print("Popped at Index 0:", plate_set.popAtIndex(0)) # Expected: 30
+# Rollover should shift 40 (bottom of Sub-Stack 1) into Sub-Stack 0!
+# Result should be: Sub-Stack 0: [10, 20, 40], Sub-Stack 1: [50]
+
+display_set_of_stacks(plate_set)
+
