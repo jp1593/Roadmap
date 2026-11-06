@@ -74,3 +74,25 @@ def levelOrderTraversal(rootNode):
 print("--- Level-Order ---")
 levelOrderTraversal(newBT)
 print()
+
+def searchNode(rootNode, nodeValue):
+    if not rootNode: 
+        return "Binary Tree doesn't exists" 
+    else: 
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not customQueue.isEmpty(): 
+            root = customQueue.dequeue()
+            if nodeValue == root.value.data: 
+                return "The value is on the tree"
+            if root.value.leftChild:
+                customQueue.enqueue(root.value.leftChild)
+            if root.value.rightChild: 
+                customQueue.enqueue(root.value.rightChild)
+        return "Value not found in tree"
+    
+ 
+print("--- Search-Node ---")
+print(searchNode(newBT, "Hot"))
+print()
+
